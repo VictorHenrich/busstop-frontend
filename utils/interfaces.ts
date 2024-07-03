@@ -10,3 +10,15 @@ export interface UserEntity{
     password: string
 }
 
+
+export interface PointEntity{
+    addressZipCode: string,
+    addressState: string,
+    addressNeighborhood: string,
+    addressStreet: string,
+    addresssNumber: string,
+    addressCity: string,
+    latitude: string,
+    longitude: string
+}
+

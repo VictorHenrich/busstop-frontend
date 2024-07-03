@@ -1,10 +1,11 @@
+import React from "react"
 import { Center, Image, Stack } from "native-base"
 import AppInput from "@/components/input"
 import AppButton from "@/components/button"
 import AppLink from "@/components/link"
 
 
-export default function LoginPage(): React.ReactElement{
+function AppLoginPage(): React.ReactElement{
     return (
         <Center 
             width="full" 
@@ -32,10 +33,12 @@ export default function LoginPage(): React.ReactElement{
             >
                 <AppInput 
                     label="Email"
+                    padding={5}
                 />
                 <AppInput 
                     label="Senha"
                     type="password"
+                    padding={5}
                 />
                 <Center 
                     alignItems="end"
@@ -55,3 +58,6 @@ export default function LoginPage(): React.ReactElement{
         </Center>
     )
 }
+
+
+export default React.memo(AppLoginPage);

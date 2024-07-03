@@ -47,7 +47,7 @@ export default function AppInput({
                 fontFamily="input"
                 opacity={0.7}
                 fontSize="inherit"
-                padding={5}
+                padding={2}
                 _focus={actionStyle}
                 _hover={actionStyle}
                 {...props}

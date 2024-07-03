@@ -8,7 +8,7 @@ export default function AppButton(props: IButtonProps): React.ReactElement{
         <Button 
             backgroundColor="primary"
             color="secondary"
-            fontWeight="bold"
+            fontWeight="bolder"
             {...props}
         />
     );

@@ -1,11 +1,14 @@
+import React from "react";
 import { Center } from "native-base";
 
 
 
-export default function AppSettingsPage(){
+function AppMainSettingsPage(){
     return (
         <Center>
             SETTINGS
         </Center>
     )
 }
+
+export default React.memo(AppMainSettingsPage);
