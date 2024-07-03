@@ -1,10 +1,9 @@
-import { Stack } from 'expo-router';
+import React from "react";
 import { useFonts } from "expo-font";
-
+import { Slot, router, usePathname } from "expo-router";
 import { NativeBaseProvider, extendTheme } from "native-base";
 
-export default function RootLayout() {
-
+export default function AppLayout() {
   useFonts({
     "OpenSans": require("@/assets/fonts/OpenSans-Regular.otf"),
     "Roboto": require("@/assets/fonts/Roboto-Regular.otf"),
@@ -35,9 +34,16 @@ export default function RootLayout() {
     }
   });
 
+  const pathname: string = usePathname();
+
+  React.useEffect(()=>{
+    if(pathname === "/")
+      router.navigate("/login");
+  }, [pathname]);
+
   return (
     <NativeBaseProvider theme={theme}>
-      <Stack/>
+        <Slot />
     </NativeBaseProvider>
   );
 }
