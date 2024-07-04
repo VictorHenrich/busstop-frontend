@@ -4,7 +4,7 @@ import { Ionicons, MaterialIcons } from '@expo/vector-icons';
 import { type ITheme, useTheme } from 'native-base';
 
 
-export default function MainLayout(): React.ReactElement{
+export default function AppMainLayout(): React.ReactElement{
     const { colors }: ITheme = useTheme();
     
     return (
