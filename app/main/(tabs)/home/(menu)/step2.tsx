@@ -70,7 +70,7 @@ export default function AppHomeMenuStep2({
                             padding={5}
                             marginBottom={5}
                             backgroundColor={backgroundColor}
-                            onTouchStart={()=> setSelectedItem(item)}
+                            onTouchEndCapture={()=> setSelectedItem(item)}
                         >
                             <Stack
                                 width="full"

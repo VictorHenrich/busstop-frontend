@@ -15,6 +15,14 @@ export default function AppMainLayout(): React.ReactElement{
                 tabBarActiveBackgroundColor: `${colors.secondary}`,
                 tabBarInactiveBackgroundColor: `${colors.tertiary}`,
                 tabBarInactiveTintColor: `${colors.secondary}`,
+                tabBarStyle: {
+                    borderWidth: 0
+                },
+                tabBarLabelStyle: {
+                    fontWeight: 600,
+                    fontFamily: "Montserrat",
+                    fontSize: 14
+                }
             }}
         >
             <Tabs.Screen

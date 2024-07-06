@@ -1,17 +1,18 @@
 import React from "react";
-import { Input, FormControl, Text } from "native-base";
+import { Input, FormControl, Text, type  IFormControlLabelProps } from "native-base";
 import { type IInputProps } from "native-base/lib/typescript/components/primitives/Input/types";
-
 export interface AppInputProps extends IInputProps{
     label?: string,
     helperMessage?: string,
-    errorMessage?: string
+    errorMessage?: string,
+    labelProps?: IFormControlLabelProps
 }
 
 export default function AppInput({
     label,
     helperMessage,
     errorMessage,
+    labelProps = {},
     ...props
 }: AppInputProps): React.ReactElement{
     const actionStyle: Partial<IInputProps> = {
@@ -27,7 +28,7 @@ export default function AppInput({
         >
             {
                 label && (
-                    <FormControl.Label>
+                    <FormControl.Label {...labelProps}>
                         <Text
                             fontFamily="label"
                             fontSize="inherit"

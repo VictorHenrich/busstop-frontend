@@ -1,4 +1,4 @@
-import { Center } from "native-base";
+import { Center, Icon } from "native-base";
 import AppMaps from "@/components/maps";
 import React from "react";
 import AppIconButton from "@/components/iconButton";
@@ -16,9 +16,10 @@ function AppMainHomePage(): React.ReactElement{
             width="full" 
             height="full"
             position="relative"
+            backgroundColor="secondary"
         >
             <AppHomeMenu />
-            <AppMaps 
+            {/* <AppMaps 
                 origin={{
                     latitude: "-28.4407942",
                     longitude: "-48.9463218"
@@ -28,9 +29,15 @@ function AppMainHomePage(): React.ReactElement{
                     latitude: "-28.4748986",
                     longitude: "-49.0773147"
                 }}
-            />
+            /> */}
             <AppIconButton 
-                icon={<AntDesign name="arrowup" color="inherit"/>}
+                icon={
+                    <Icon 
+                        as={<AntDesign name="arrowup"/>}
+                        color="inherit"
+                        fontSize={20}
+                    />
+                }
                 position="absolute"
                 bottom={5}
                 onPress={()=> setOpenMenu(true)}
