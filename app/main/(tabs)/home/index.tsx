@@ -1,12 +1,15 @@
 import { Center } from "native-base";
 import AppMaps from "@/components/maps";
 import React from "react";
-import AppMainHomeMenu from "./menu";
 import AppIconButton from "@/components/iconButton";
 import AntDesign from '@expo/vector-icons/AntDesign';
+import { AppHomeContext } from "@/utils/providers/homeProvider";
+import AppHomeMenu from "./(menu)";
 
 function AppMainHomePage(): React.ReactElement{
-    const [openMenu, setOpenMenu] = React.useState<boolean>(true);
+    const {
+        setOpenMenu
+    } = React.useContext(AppHomeContext);
 
     return (
         <Center 
@@ -14,10 +17,7 @@ function AppMainHomePage(): React.ReactElement{
             height="full"
             position="relative"
         >
-            <AppMainHomeMenu 
-                open={openMenu}
-                onClose={()=> setOpenMenu(false)}
-            />
+            <AppHomeMenu />
             <AppMaps 
                 origin={{
                     latitude: "-28.4407942",
