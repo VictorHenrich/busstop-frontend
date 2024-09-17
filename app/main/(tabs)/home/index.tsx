@@ -1,5 +1,5 @@
 import { Center, Icon } from "native-base";
-import AppMaps from "@/components/maps";
+import AppDefaultMaps from "@/components/defaultMaps";
 import React from "react";
 import AppIconButton from "@/components/iconButton";
 import AntDesign from '@expo/vector-icons/AntDesign';
@@ -19,7 +19,7 @@ function AppMainHomePage(): React.ReactElement{
             backgroundColor="secondary"
         >
             <AppHomeMenu />
-            {/* <AppMaps 
+            <AppDefaultMaps 
                 origin={{
                     latitude: "-28.4407942",
                     longitude: "-48.9463218"
@@ -29,7 +29,7 @@ function AppMainHomePage(): React.ReactElement{
                     latitude: "-28.4748986",
                     longitude: "-49.0773147"
                 }}
-            /> */}
+            />
             <AppIconButton 
                 icon={
                     <Icon 

@@ -16,19 +16,19 @@ import { type ITheme, useTheme } from 'native-base';
 type PointProps = Pick<PointEntity, "latitude" | "longitude">;
 
 
-export interface AppMapsProps extends MapProps{
+export interface AppGoogleMapsProps extends MapProps{
     origin?: PointProps,
     destination?: PointProps,
 }
 
-export interface AppMapMarkerProps{
+export interface AppGoogleMapMarkerProps{
     position: PointProps,
 } 
 
 
-export function AppMapMarker({
+export function AppGoogleMapMarker({
     position,
-}: AppMapMarkerProps): React.ReactElement{
+}: AppGoogleMapMarkerProps): React.ReactElement{
     const { colors }: ITheme = useTheme();
 
     return (
@@ -47,10 +47,10 @@ export function AppMapMarker({
     )
 }
 
-export function AppMapDirections({
+export function AppGoogleMapDirections({
     origin,
     destination
-}: Pick<AppMapsProps, "origin" | "destination">): React.ReactElement{
+}: Pick<AppGoogleMapsProps, "origin" | "destination">): React.ReactElement{
     const map = useMap();
 
     const routesLibrary = useMapsLibrary("routes");
@@ -94,11 +94,11 @@ export function AppMapDirections({
 }
 
 
-export default function AppMaps({
+export default function AppGoogleMaps({
     origin,
     destination,
     ...props
-}: AppMapsProps): React.ReactElement{
+}: AppGoogleMapsProps): React.ReactElement{
     return (
         <APIProvider apiKey="AIzaSyBv4qcayLNmXLiVvrZNuiMuG0aC1JdGjss">
             <Map 
@@ -106,11 +106,11 @@ export default function AppMaps({
                 defaultZoom={50}
                 mapId={'bf51a910020fa25a'}
             >
-                {origin && <AppMapMarker position={origin}/>}
+                {origin && <AppGoogleMapMarker position={origin}/>}
 
-                {destination && <AppMapMarker position={destination}/>}
+                {destination && <AppGoogleMapMarker position={destination}/>}
 
-                <AppMapDirections 
+                <AppGoogleMapDirections 
                     destination={destination}
                     origin={origin}
                 />
